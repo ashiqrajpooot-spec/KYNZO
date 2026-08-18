@@ -7,8 +7,8 @@ interface CoinsContextType {
   coins: number
   addCoins: (amount: number) => void
   spendCoins: (amount: number) => boolean
-  coinsToDollars: (coins: number) => number
-  dollarsToCoins: (dollars: number) => number
+  coinsToRupees: (coins: number) => number
+  rupeesToCoins: (rupees: number) => number
   getDiscountAmount: (cartTotal: number) => number
   applyDiscount: boolean
   setApplyDiscount: (apply: boolean) => void
@@ -26,8 +26,8 @@ export interface CoinTransaction {
 
 const CoinsContext = createContext<CoinsContextType | undefined>(undefined)
 
-// 100 ASH Coins = $1, so 10% discount means using coins worth 10% of cart
-const COINS_PER_DOLLAR = 100
+// 100 ASH Coins = Rs 278, so 10% discount means using coins worth 10% of cart
+const COINS_PER_RUPEE = 100 / 278
 const MAX_DISCOUNT_PERCENT = 10
 
 const DEFAULT_COINS = 500
@@ -83,18 +83,18 @@ export function CoinsProvider({ children }: { children: ReactNode }) {
     return false
   }
 
-  const coinsToDollars = (coinAmount: number): number => {
-    return coinAmount / COINS_PER_DOLLAR
+  const coinsToRupees = (coinAmount: number): number => {
+    return coinAmount / COINS_PER_RUPEE
   }
 
-  const dollarsToCoins = (dollars: number): number => {
-    return Math.floor(dollars * COINS_PER_DOLLAR)
+  const rupeesToCoins = (rupees: number): number => {
+    return Math.floor(rupees * COINS_PER_RUPEE)
   }
 
   // Get maximum discount amount (10% of cart total, limited by available coins)
   const getDiscountAmount = (cartTotal: number): number => {
     const maxDiscount = cartTotal * (MAX_DISCOUNT_PERCENT / 100)
-    const availableDiscount = coinsToDollars(coins)
+    const availableDiscount = coinsToRupees(coins)
     return Math.min(maxDiscount, availableDiscount)
   }
 
@@ -113,8 +113,8 @@ export function CoinsProvider({ children }: { children: ReactNode }) {
         coins,
         addCoins,
         spendCoins,
-        coinsToDollars,
-        dollarsToCoins,
+        coinsToRupees,
+        rupeesToCoins,
         getDiscountAmount,
         applyDiscount,
         setApplyDiscount,

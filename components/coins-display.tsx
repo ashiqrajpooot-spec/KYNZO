@@ -33,7 +33,7 @@ const dailyChallenges = [
 ]
 
 export function CoinsDisplay() {
-  const { coins, transactions, coinsToDollars, addCoins, addTransaction } = useCoins()
+  const { coins, transactions, coinsToRupees, addCoins, addTransaction } = useCoins()
   const [redeemingReward, setRedeemingReward] = useState<string | null>(null)
   const [isHydrated, setIsHydrated] = useState(false)
 
@@ -87,7 +87,7 @@ export function CoinsDisplay() {
             <div>
               <p className="text-sm opacity-90">Your Balance</p>
               <p className="text-3xl font-bold">{coins.toLocaleString()}</p>
-              <p className="text-sm opacity-75">= {formatINR(coinsToDollars(coins))} value</p>
+              <p className="text-sm opacity-75">= {formatINR(coinsToRupees(coins) / 278)} value</p>
             </div>
             <div className="text-right">
               <div className="flex items-center gap-1 mb-1">

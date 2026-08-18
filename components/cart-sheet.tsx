@@ -31,9 +31,9 @@ export function CartSheet({ children }: CartSheetProps) {
   const [earnedCoins, setEarnedCoins] = useState(0)
 
   const discountAmount = coinsData.applyDiscount ? coinsData.getDiscountAmount(totalPrice) : 0
-  const coinsToSpend = coinsData.dollarsToCoins(discountAmount)
+  const coinsToSpend = coinsData.rupeesToCoins(discountAmount * 278)
   const finalPrice = totalPrice - discountAmount
-  const coinsEarnedFromPurchase = coinsData.dollarsToCoins(finalPrice)
+  const coinsEarnedFromPurchase = coinsData.rupeesToCoins(finalPrice * 278)
 
   const handleCheckout = async () => {
     setIsProcessing(true)
@@ -165,7 +165,7 @@ export function CartSheet({ children }: CartSheetProps) {
                           <div>
                             <p className="text-sm font-medium">Use ASH Coins</p>
                             <p className="text-xs text-muted-foreground">
-                              You have {coinsData.coins.toLocaleString()} coins ({coinsData.coins >= coinsData.dollarsToCoins(totalPrice * 0.1) ? "Save 10%!" : `${formatINR(coinsData.coins / 100)} value`})
+                              You have {coinsData.coins.toLocaleString()} coins ({coinsData.coins >= coinsData.rupeesToCoins(totalPrice * 278 * 0.1) ? "Save 10%!" : `${formatINR(coinsData.coins / 100)} value`})
                             </p>
                           </div>
                         </div>

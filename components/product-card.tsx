@@ -22,7 +22,7 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart()
   const { isInWishlist, toggleWishlist } = useWishlist()
-  const { dollarsToCoins } = useCoins()
+  const { rupeesToCoins } = useCoins()
   const [quickViewOpen, setQuickViewOpen] = useState(false)
 
   const discount = product.originalPrice
@@ -31,7 +31,7 @@ export function ProductCard({ product }: ProductCardProps) {
       )
     : 0
 
-  const coinsEarned = dollarsToCoins(product.price)
+  const coinsEarned = rupeesToCoins(product.price * 278)
   const inWishlist = isInWishlist(product.id)
 
   const handleAddToCart = () => {
