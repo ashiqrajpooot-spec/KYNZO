@@ -40,7 +40,6 @@ export function SellerProvider({ children }: { children: ReactNode }) {
   const [seller, setSeller] = useState<SellerProfile | null>(null)
   const [stats, setStats] = useState<SellerStats | null>(null)
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [isHydrated, setIsHydrated] = useState(false)
 
   // Hydrate from localStorage on mount
   useEffect(() => {
@@ -71,7 +70,6 @@ export function SellerProvider({ children }: { children: ReactNode }) {
         }
       }
     }
-    setIsHydrated(true)
   }, [])
 
   const login = async (email: string, password: string) => {
@@ -160,10 +158,6 @@ export function SellerProvider({ children }: { children: ReactNode }) {
         localStorage.setItem("ashmart-seller", JSON.stringify(updatedSeller))
       }
     }
-  }
-
-  if (!isHydrated) {
-    return <>{children}</>
   }
 
   return (
