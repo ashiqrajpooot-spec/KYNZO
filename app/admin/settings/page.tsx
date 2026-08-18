@@ -193,7 +193,7 @@ export default function SettingsPage() {
                 <h4 className="font-medium">Earning Rate</h4>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="coinsPerDollar">Coins per $1 spent</Label>
+                    <Label htmlFor="coinsPerDollar">Coins per Rs 278 spent</Label>
                     <Input id="coinsPerDollar" type="number" defaultValue="10" />
                   </div>
                   <div className="space-y-2">
@@ -209,7 +209,7 @@ export default function SettingsPage() {
                 <h4 className="font-medium">Redemption Settings</h4>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <Label htmlFor="coinsPerDiscount">Coins per $1 discount</Label>
+                    <Label htmlFor="coinsPerDiscount">Coins per Rs 278 discount</Label>
                     <Input id="coinsPerDiscount" type="number" defaultValue="100" />
                   </div>
                   <div className="space-y-2">

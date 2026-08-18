@@ -10,13 +10,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Gift, Mail, DollarSign, Calendar, Check } from "lucide-react"
 
 export default function GiftCardsPage() {
-  const [selectedAmount, setSelectedAmount] = useState(50)
+  const [selectedAmount, setSelectedAmount] = useState(5560)
   const [customAmount, setCustomAmount] = useState("")
   const [recipientEmail, setRecipientEmail] = useState("")
   const [message, setMessage] = useState("")
   const [deliveryType, setDeliveryType] = useState("email")
 
-  const presetAmounts = [25, 50, 100, 250, 500]
+  const presetAmounts = [2780, 5560, 11120, 27800, 55600]
 
   const handlePurchase = () => {
     if (!recipientEmail) {

@@ -6,12 +6,12 @@ const features = [
   {
     icon: Truck,
     title: "Free Shipping",
-    description: "On orders over $25",
+    description: "On orders over Rs 6,950",
   },
   {
     icon: Coins,
     title: "Earn ASH Coins",
-    description: "10 coins per $1 spent",
+    description: "10 coins per Rs 278 spent",
   },
   {
     icon: Gift,

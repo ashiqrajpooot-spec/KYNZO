@@ -49,7 +49,7 @@ export default function SellPage() {
                 <p>Sellers</p>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-2">$5B+</div>
+                <div className="text-4xl font-bold mb-2">Rs 1.39T+</div>
                 <p>Annual Sales</p>
               </div>
             </div>
@@ -167,21 +167,21 @@ export default function SellPage() {
               {[
                 {
                   name: "Individual",
-                  price: "$0",
+                  price: "Rs 0",
                   features: [
                     "Unlimited products",
-                    "0.99 per item sold",
+                    "Rs 275 per item sold",
                     "Basic seller tools",
                     "Standard support",
                   ],
                 },
                 {
                   name: "Professional",
-                  price: "$39.99",
+                  price: "Rs 11,117",
                   period: "/month",
                   features: [
                     "Unlimited products",
-                    "0.49 per item sold",
+                    "Rs 136 per item sold",
                     "Advanced tools",
                     "Priority support",
                     "Marketing tools",
@@ -190,11 +190,11 @@ export default function SellPage() {
                 },
                 {
                   name: "Premium",
-                  price: "$99.99",
+                  price: "Rs 27,797",
                   period: "/month",
                   features: [
                     "Unlimited products",
-                    "0.25 per item sold",
+                    "Rs 70 per item sold",
                     "All tools included",
                     "24/7 VIP support",
                     "Ad credits",
