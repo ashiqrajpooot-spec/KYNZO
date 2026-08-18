@@ -13,8 +13,8 @@ export function SellerBottomNavigation() {
     setIsClient(true)
   }, [])
 
-  // Only show on seller routes
-  if (!pathname?.startsWith("/seller")) {
+  // Only show authenticated seller navigation on seller app routes.
+  if (!pathname?.startsWith("/seller") || pathname === "/seller/register" || pathname === "/seller/login") {
     return null
   }
 

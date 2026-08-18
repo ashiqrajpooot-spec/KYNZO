@@ -54,7 +54,7 @@ export function WelcomeReward() {
               <span className="text-4xl font-bold text-amber-600">500</span>
             </div>
             <p className="text-sm text-amber-700 font-medium">ASH Coins</p>
-            <p className="text-xs text-muted-foreground mt-1">= $5.00 value</p>
+            <p className="text-xs text-muted-foreground mt-1">= Rs 1,390 value</p>
           </div>
 
           <div className="space-y-2 text-sm text-left bg-muted/50 rounded-lg p-4">

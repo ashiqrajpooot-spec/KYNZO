@@ -19,8 +19,8 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 
 const rewards = [
   { name: "Free Shipping", coins: 200, icon: "🚚" },
-  { name: "$5 Off", coins: 500, icon: "💰" },
-  { name: "$10 Off", coins: 1000, icon: "💎" },
+  { name: "Rs 1,390 Off", coins: 500, icon: "💰" },
+  { name: "Rs 2,780 Off", coins: 1000, icon: "💎" },
   { name: "Mystery Box", coins: 1500, icon: "🎁" },
   { name: "VIP Status", coins: 5000, icon: "👑" },
 ]
@@ -33,7 +33,7 @@ const dailyChallenges = [
 ]
 
 export function CoinsDisplay() {
-  const { coins, transactions, coinsToDollars, addCoins, addTransaction } = useCoins()
+  const { coins, transactions, coinsToRupees, addCoins, addTransaction } = useCoins()
   const [redeemingReward, setRedeemingReward] = useState<string | null>(null)
   const [isHydrated, setIsHydrated] = useState(false)
 
@@ -87,7 +87,7 @@ export function CoinsDisplay() {
             <div>
               <p className="text-sm opacity-90">Your Balance</p>
               <p className="text-3xl font-bold">{coins.toLocaleString()}</p>
-              <p className="text-sm opacity-75">= {formatINR(coinsToDollars(coins))} value</p>
+              <p className="text-sm opacity-75">= {formatINR(coinsToRupees(coins) / 278)} value</p>
             </div>
             <div className="text-right">
               <div className="flex items-center gap-1 mb-1">
@@ -163,7 +163,7 @@ export function CoinsDisplay() {
                 <div className="p-3 rounded-lg bg-muted/30 text-center">
                   <p className="text-2xl mb-1">🛒</p>
                   <p className="text-xs font-medium">Shop & Earn</p>
-                  <p className="text-xs text-amber-600">10 coins/$1</p>
+                  <p className="text-xs text-amber-600">10 coins/Rs 278</p>
                 </div>
                 <div className="p-3 rounded-lg bg-muted/30 text-center">
                   <p className="text-2xl mb-1">⭐</p>

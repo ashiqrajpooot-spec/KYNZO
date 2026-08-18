@@ -29,7 +29,7 @@ export function QuickView({ product, open, onOpenChange }: QuickViewProps) {
   const [quantity, setQuantity] = useState(1)
   const { addItem } = useCart()
   const { isInWishlist, toggleWishlist } = useWishlist()
-  const { dollarsToCoins } = useCoins()
+  const { rupeesToCoins } = useCoins()
 
   const discount = product.originalPrice
     ? Math.round(
@@ -37,7 +37,7 @@ export function QuickView({ product, open, onOpenChange }: QuickViewProps) {
       )
     : 0
 
-  const coinsEarned = dollarsToCoins(product.price * quantity)
+  const coinsEarned = rupeesToCoins(product.price * quantity * 278)
 
   const handleAddToCart = () => {
     for (let i = 0; i < quantity; i++) {

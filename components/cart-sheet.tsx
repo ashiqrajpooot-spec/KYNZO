@@ -31,9 +31,9 @@ export function CartSheet({ children }: CartSheetProps) {
   const [earnedCoins, setEarnedCoins] = useState(0)
 
   const discountAmount = coinsData.applyDiscount ? coinsData.getDiscountAmount(totalPrice) : 0
-  const coinsToSpend = coinsData.dollarsToCoins(discountAmount)
+  const coinsToSpend = coinsData.rupeesToCoins(discountAmount * 278)
   const finalPrice = totalPrice - discountAmount
-  const coinsEarnedFromPurchase = coinsData.dollarsToCoins(finalPrice)
+  const coinsEarnedFromPurchase = coinsData.rupeesToCoins(finalPrice * 278)
 
   const handleCheckout = async () => {
     setIsProcessing(true)
@@ -165,7 +165,7 @@ export function CartSheet({ children }: CartSheetProps) {
                           <div>
                             <p className="text-sm font-medium">Use ASH Coins</p>
                             <p className="text-xs text-muted-foreground">
-                              You have {coinsData.coins.toLocaleString()} coins ({coinsData.coins >= coinsData.dollarsToCoins(totalPrice * 0.1) ? "Save 10%!" : `$${(coinsData.coins / 100).toFixed(2)} value`})
+                              You have {coinsData.coins.toLocaleString()} coins ({coinsData.coins >= coinsData.rupeesToCoins(totalPrice * 278 * 0.1) ? "Save 10%!" : `${formatINR(coinsData.coins / 100)} value`})
                             </p>
                           </div>
                         </div>
@@ -177,7 +177,7 @@ export function CartSheet({ children }: CartSheetProps) {
                       {coinsData.applyDiscount && discountAmount > 0 && (
                         <div className="mt-2 pt-2 border-t border-amber-200">
                           <p className="text-sm text-green-600 font-medium">
-                            Using {coinsToSpend.toLocaleString()} coins for -${discountAmount.toFixed(2)} discount!
+                            Using {coinsToSpend.toLocaleString()} coins for -{formatINR(discountAmount)} discount!
                           </p>
                         </div>
                       )}
@@ -219,7 +219,7 @@ export function CartSheet({ children }: CartSheetProps) {
                     Proceed to Checkout
                   </Button>
               <p className="mt-2 text-center text-xs text-muted-foreground">
-                Free shipping on orders over ₹2,088
+                Free shipping on orders over Rs 2,088
               </p>
                 </div>
               </>
@@ -280,21 +280,11 @@ export function CartSheet({ children }: CartSheetProps) {
 
                 <div className="space-y-4">
                   <h3 className="font-semibold">Payment Method</h3>
-                  <div className="grid gap-3">
-                    <div>
-                      <Label htmlFor="cardNumber">Card Number</Label>
-                      <Input id="cardNumber" placeholder="1234 5678 9012 3456" />
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <Label htmlFor="expiry">Expiry Date</Label>
-                        <Input id="expiry" placeholder="MM/YY" />
-                      </div>
-                      <div>
-                        <Label htmlFor="cvv">CVV</Label>
-                        <Input id="cvv" placeholder="123" />
-                      </div>
-                    </div>
+                  <div className="rounded-lg border border-primary/30 bg-primary/5 p-4">
+                    <p className="font-medium">Cash on Delivery</p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      This checkout currently records an order request only. No card is charged online; payment is collected when your order arrives.
+                    </p>
                   </div>
                 </div>
 
@@ -366,9 +356,9 @@ export function CartSheet({ children }: CartSheetProps) {
               <Check className="h-10 w-10 text-green-600" />
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-2">Order Placed Successfully!</h3>
+              <h3 className="text-xl font-semibold mb-2">Order Request Submitted</h3>
               <p className="text-muted-foreground">
-                Thank you for shopping with ASH MART. Your order has been confirmed and will be shipped soon.
+                Thank you for shopping with ASH MART. Your cash-on-delivery order request has been recorded. No online payment was charged.
               </p>
             </div>
             

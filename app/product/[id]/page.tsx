@@ -164,7 +164,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                   <Truck className="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="font-semibold text-sm">Free Shipping</p>
-                    <p className="text-xs text-muted-foreground">On orders over ₹4,175</p>
+                    <p className="text-xs text-muted-foreground">On orders over Rs 4,175</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

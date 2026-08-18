@@ -27,7 +27,7 @@ import {
 const stats = [
   {
     title: "Total Revenue",
-    value: "$45,231.89",
+    value: "Rs 12,574,462",
     change: "+20.1%",
     trend: "up",
     icon: DollarSign,
@@ -61,7 +61,7 @@ const recentOrders = [
     customer: "John Doe",
     email: "john@example.com",
     product: "Wireless Headphones",
-    amount: "$129.99",
+    amount: "Rs 36,137",
     status: "completed",
     date: "2024-01-15",
   },
@@ -70,7 +70,7 @@ const recentOrders = [
     customer: "Jane Smith",
     email: "jane@example.com",
     product: "Smart Watch",
-    amount: "$299.99",
+    amount: "Rs 83,397",
     status: "processing",
     date: "2024-01-15",
   },
@@ -79,7 +79,7 @@ const recentOrders = [
     customer: "Bob Wilson",
     email: "bob@example.com",
     product: "Laptop Stand",
-    amount: "$79.99",
+    amount: "Rs 22,237",
     status: "pending",
     date: "2024-01-14",
   },
@@ -88,7 +88,7 @@ const recentOrders = [
     customer: "Alice Brown",
     email: "alice@example.com",
     product: "Mechanical Keyboard",
-    amount: "$159.99",
+    amount: "Rs 44,477",
     status: "completed",
     date: "2024-01-14",
   },
@@ -97,18 +97,18 @@ const recentOrders = [
     customer: "Charlie Davis",
     email: "charlie@example.com",
     product: "USB-C Hub",
-    amount: "$49.99",
+    amount: "Rs 13,897",
     status: "shipped",
     date: "2024-01-13",
   },
 ]
 
 const topProducts = [
-  { name: "Wireless Headphones Pro", sales: 1234, revenue: "$160,000" },
-  { name: "Smart Watch Series 5", sales: 987, revenue: "$295,000" },
-  { name: "Portable Bluetooth Speaker", sales: 876, revenue: "$43,800" },
-  { name: "4K Webcam", sales: 654, revenue: "$78,000" },
-  { name: "Ergonomic Mouse", sales: 543, revenue: "$32,580" },
+  { name: "Wireless Headphones Pro", sales: 1234, revenue: "Rs 44,480,000" },
+  { name: "Smart Watch Series 5", sales: 987, revenue: "Rs 82,010,000" },
+  { name: "Portable Bluetooth Speaker", sales: 876, revenue: "Rs 12,176,400" },
+  { name: "4K Webcam", sales: 654, revenue: "Rs 21,684,000" },
+  { name: "Ergonomic Mouse", sales: 543, revenue: "Rs 9,057,240" },
 ]
 
 function getStatusBadge(status: string) {

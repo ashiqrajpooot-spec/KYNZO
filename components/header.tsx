@@ -273,20 +273,28 @@ export function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56">
                   <div className="p-3">
-                    <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                      Sign In
+                    <Button asChild className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                      <Link href="/account">Sign In</Link>
                     </Button>
                     <p className="mt-2 text-center text-xs text-muted-foreground">
                       New customer?{" "}
-                      <Link href="#" className="text-primary hover:underline">
+                      <Link href="/account" className="text-primary hover:underline">
                         Start here
                       </Link>
                     </p>
                   </div>
-                  <DropdownMenuItem>Your Account</DropdownMenuItem>
-                  <DropdownMenuItem>Your Orders</DropdownMenuItem>
-                  <DropdownMenuItem>Your Wish List</DropdownMenuItem>
-                  <DropdownMenuItem>Your Recommendations</DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/account">Your Account</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/orders">Your Orders</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/account#wishlist">Your Wish List</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/deals">Your Recommendations</Link>
+                  </DropdownMenuItem>
                   <DropdownMenuItem asChild>
                     <Link href="/admin" className="flex items-center gap-2">
                       <Settings className="h-4 w-4" />
@@ -320,8 +328,8 @@ export function Header() {
                       <p className="text-sm text-muted-foreground mb-4">
                         Sign in to view your orders and track your purchases
                       </p>
-                      <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
-                        Sign In to View Orders
+                      <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+                        <Link href="/orders">View Orders</Link>
                       </Button>
                     </div>
                     <div className="border-t pt-4 mt-4">
@@ -329,8 +337,8 @@ export function Header() {
                       <p className="text-sm text-muted-foreground mb-3">
                         ASH MART offers free returns within 30 days of delivery for most items.
                       </p>
-                      <Button variant="outline" className="w-full">
-                        Start a Return
+                      <Button asChild variant="outline" className="w-full">
+                        <Link href="/returns">Start a Return</Link>
                       </Button>
                     </div>
                   </div>
@@ -411,13 +419,13 @@ export function Header() {
             </Sheet>
 
             <Link
-              href="#deals"
+              href="/deals"
               className="whitespace-nowrap text-sm hover:underline"
             >
               Today&apos;s Deals
             </Link>
             <Link
-              href="#"
+              href="/help"
               className="whitespace-nowrap text-sm hover:underline"
             >
               Customer Service

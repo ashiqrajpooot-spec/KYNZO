@@ -107,7 +107,7 @@ export default function AnalyticsPage() {
             <DollarSign className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$241,400</div>
+            <div className="text-2xl font-bold">Rs 67,109,200</div>
             <div className="flex items-center gap-1 text-xs text-green-600">
               <ArrowUpRight className="h-3 w-3" />
               +12.5% from last year
@@ -152,7 +152,7 @@ export default function AnalyticsPage() {
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">$84.28</div>
+            <div className="text-2xl font-bold">Rs 23,407</div>
             <div className="flex items-center gap-1 text-xs text-red-600">
               <ArrowDownRight className="h-3 w-3" />
               -2.1% from last year
