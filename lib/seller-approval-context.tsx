@@ -127,10 +127,6 @@ export function ApprovalProvider({ children }: { children: ReactNode }) {
     return app?.status === "rejected"
   }
 
-  if (!isHydrated) {
-    return <>{children}</>
-  }
-
   return (
     <ApprovalContext.Provider
       value={{
